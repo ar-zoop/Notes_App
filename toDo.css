@@ -1,0 +1,41 @@
+.center_nav{
+    padding-left:16% !important;
+}
+
+.column{
+    float: left;
+    width: 50%;
+    padding: 5px;
+}
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.createNote{
+    min-width: 98%;
+    margin:50px 1% 0px 1%!important;   
+    border-radius: 5px;
+}
+
+.submitNote{
+    margin: 1% 1% 50px 1% !important;
+    border-radius: 5px;
+}
+
+.box{
+   border: thin solid grey;
+    margin-top:2%;
+    margin-left:9%;
+    position:relative;
+    border-radius: 5px;
+    min-height: 100px;
+    /* padding:0px !important; */
+    /* margin */
+    /* margin-top: 10%!; */
+}
+
+.nav-design{
+    margin-left:2%;
+}
