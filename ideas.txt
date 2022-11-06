@@ -1,0 +1,2 @@
+1. Can add reminders as toast (bs)
+2. Use pagination to move across pages when working with multiple pages of notes

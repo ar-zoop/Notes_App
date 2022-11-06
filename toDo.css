@@ -12,11 +12,19 @@
     clear: both;
     display: table;
 }
+ @keyframes ani1 {
+     from {
+         background-color: grey;
+     }
+ }
 
 .createNote{
+    /* border: thin solid grey; */
     min-width: 98%;
     margin:50px 1% 0px 1%!important;   
     border-radius: 5px;
+    /* animation-name: ani1; */
+    /* animation-duration: 5s; */
 }
 
 .submitNote{
@@ -25,17 +33,23 @@
 }
 
 .box{
-   border: thin solid grey;
+   /* border: thin solid grey; */
     margin-top:2%;
     margin-left:9%;
-    position:relative;
+    /* margin:1%; */
+    /* position:relative; */
     border-radius: 5px;
     min-height: 100px;
-    /* padding:0px !important; */
+    /* padding:0px !important;*/
     /* margin */
     /* margin-top: 10%!; */
+    
 }
 
 .nav-design{
     margin-left:2%;
+}
+
+.chooseNote:active{
+    border: thin solid transparent;
 }
