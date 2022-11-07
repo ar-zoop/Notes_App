@@ -17,19 +17,17 @@
          background-color: grey;
      }
  }
-
-.createNote{
-    /* border: thin solid grey; */
-    min-width: 98%;
-    margin:50px 1% 0px 1%!important;   
-    border-radius: 5px;
-    /* animation-name: ani1; */
-    /* animation-duration: 5s; */
+.createNoteContainer{
+    margin: 0% auto 2% auto;
 }
 
-.submitNote{
-    margin: 1% 1% 50px 1% !important;
-    border-radius: 5px;
+.createNote{
+    margin: 3% 1% 0% 20%;
+    min-width: fit-content;
+}
+
+.createNote:focus-visible{
+    outline: none;
 }
 
 .box{
@@ -46,10 +44,20 @@
     
 }
 
+.box:focus-visible {
+    outline: none;
+}
+
 .nav-design{
     margin-left:2%;
 }
 
 .chooseNote:active{
     border: thin solid transparent;
+}
+
+textarea:focus{
+        border-color: #86b7fe !important;
+        outline: 0 !important;
+        box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%) !important;
 }
