@@ -2,6 +2,10 @@
     padding-left:16% !important;
 }
 
+.color{
+    background-color: red;
+}
+
 .column{
     float: left;
     width: 50%;
