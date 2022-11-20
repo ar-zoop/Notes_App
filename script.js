@@ -1,14 +1,18 @@
 // var dl = document.getElementById('note1');
+var id=0;
 function createNote() {
-	//This creates a div
+	//This creates a div 	
 	const newDiv = document.createElement("div");
 	newDiv.setAttribute("class", "col-sm-3 col-md-4 col-lg-4 ");
+
+	//This creates a sec
 	const newSec=document.createElement("section");
+	newSec.setAttribute("id", ++id);
 	newSec.setAttribute("type", "button" );
 	newSec.setAttribute("data-bs-toggle", "modal");
 	newSec.setAttribute("data-bs-target", "#exampleModal");
 	newSec.setAttribute("class", "btn btn-primary card text-bg-light box chooseNote");
-	// newSec.setAttribute("id", "note1");
+	
 	// newSec.setAttribute("data-bs-whatever", "Note 1");
 	newSec.setAttribute("style", "margin-right:9%");
 	//append the new note 
