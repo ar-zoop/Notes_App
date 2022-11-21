@@ -1,9 +1,18 @@
+const connectToDb = require("./database/connection.js");
+const schema = require('./database/models/schema.js');
 const express= require('express');
 const app=express();
 const config=require('./config.json');
+const schemaObj = new schema({});
 const mongoose= require('mongoose');
 const fs=require('fs');
 
+schemaObj.save();
+const appMongo=async()=>{
+    const connect = await connectToDb.connectToDb();
+}
+
+appMongo();
 
 const file= fs.readFileSync("testfs/test1.txt");
 console.log(file.toString());
