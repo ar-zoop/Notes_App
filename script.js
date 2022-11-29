@@ -2,6 +2,9 @@
 var idCounter = 0;
 function createNote() {
 	//This creates a div 	
+	if (document.getElementById('writeNote').value == "" || document.getElementById('writeNote').value == " "){
+		return;
+	}
 	const newDiv = document.createElement("div");
 	newDiv.setAttribute("class", "col-sm-3 col-md-4 col-lg-4 ");
 
@@ -22,7 +25,7 @@ function createNote() {
 	parent.appendChild(newDiv);
 
 	//This updates the content
-	let x = document.getElementById('writeNote').value;
+	var x = document.getElementById('writeNote').value;
 	newSec.innerHTML = x;
 	document.getElementById('modalText').innerHTML = x;
 
@@ -60,9 +63,20 @@ $('#exampleModal').on('show.bs.modal', function (event) {
 	saveChanges.addEventListener('click', function handleClick() {
 
 		var textToUpdate = document.getElementById('modalText').value;
-		document.getElementById(dataId).innerHTML = textToUpdate;
+		if(textToUpdate=="" || textToUpdate==" "){
+			document.getElementById(dataId).remove();
+		}
+		else{
+			document.getElementById(dataId).innerHTML = textToUpdate;
+		}
 		dataId=null;
 	
+	});
+	const deleteNote = document.getElementById('deleteNote');
+	deleteNote.addEventListener('click', function handleClick() {
+
+		document.getElementById(dataId).remove();
+
 	});
 });
  
