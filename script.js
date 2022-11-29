@@ -1,5 +1,5 @@
 // var dl = document.getElementById('note1');
-var id = 0;
+var idCounter = 0;
 function createNote() {
 	//This creates a div 	
 	const newDiv = document.createElement("div");
@@ -7,8 +7,8 @@ function createNote() {
 
 	//This creates a sec
 	const newSec = document.createElement("section");
-	newSec.setAttribute("data-id", ++id);
-	newSec.setAttribute("id", id);
+	newSec.setAttribute("data-id", ++idCounter);
+	newSec.setAttribute("id", idCounter);
 	newSec.setAttribute("type", "button");
 	newSec.setAttribute("data-bs-toggle", "modal");
 	newSec.setAttribute("data-bs-target", "#exampleModal");
@@ -49,22 +49,24 @@ function createNote() {
 
 }
 
-function updateNote() {
-	let x = document.getElementById('modalText').value;
-	// dl.innerHTML = x;
-}
 
 
 $('#exampleModal').on('show.bs.modal', function (event) {
-	var button = $(event.relatedTarget) // Button that triggered the modal
-	var id = button.data('id'); // Extract info from data-* attributes
-	// If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-	// Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-	var modal = $(this)
-	// console.log(modal);
-	// // modal.find('.modal-title').text('New message to ' + recipient)
-	var textToShow=document.getElementById(id).innerHTML;
-	// modal.find('.modal-body input').val(textToShow);
-	$("#modalText").html(textToShow);
-	// console.log(textToShow);
-})
+	var button = $(event.relatedTarget);
+	var dataId = button.data('id'); 
+	var textToShow=document.getElementById(dataId).innerHTML;
+	document.getElementById('modalText').value=textToShow;	
+	const saveChanges = document.getElementById('updateNote');
+	saveChanges.addEventListener('click', function handleClick() {
+
+		var textToUpdate = document.getElementById('modalText').value;
+		document.getElementById(dataId).innerHTML = textToUpdate;
+		dataId=null;
+	
+	});
+});
+ 
+
+
+
+
