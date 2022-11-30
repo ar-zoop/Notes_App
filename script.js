@@ -19,6 +19,7 @@ function saveNotes(noteToSave) {
 function deleteANote(id) {
 	const notes= getAllNotes();
 	const newNotes=notes.filter(note=> note.id!=id);
+	localStorage.setItem("notesapp-notes", JSON.stringify(newNotes));
 }
 
 
