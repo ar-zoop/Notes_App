@@ -98,7 +98,7 @@ function createNote() {
 		id:idCounter,
 		body:textToUpdate
 	});
-
+	document.getElementById('writeNote').value = "";
 }
 
 
